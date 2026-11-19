@@ -1,4 +1,4 @@
-# Roteiro do relatório (PDF, nesta ordem)
+# Roteiro do relatório
 
 1. **Integrantes:** nome completo e RM de todos.
 2. **Produto em uma frase e perguntas do MVP:** copie do README.
@@ -19,4 +19,4 @@
 8. **As 5 consultas SQL**, cada uma com o resultado e 2–3 linhas de interpretação.
 9. **Conclusão técnica** e link do repositório público.
 
-Lembretes: prints legíveis e com legenda, nenhuma chave ou senha nos prints, repositório público.
+
