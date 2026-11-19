@@ -1,0 +1,21 @@
+{"timestamp":"2026-11-18T22:37:04.820816Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2026-11-18T22:37:04.821589Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/gs_coleta_calcadas.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2026-11-18T22:37:04.861030Z","level":"info","event":"{","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.862410Z","level":"info","event":"  \"sp156\": {","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.862561Z","level":"info","event":"    \"arquivo\": \"sp156_2026-11-17.csv\",","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.862678Z","level":"info","event":"    \"bytes\": 1148849,","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.862767Z","level":"info","event":"    \"registros\": 4519","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.862856Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.862945Z","level":"info","event":"  \"clima\": {","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863031Z","level":"info","event":"    \"arquivo\": \"clima_2026-11-17.json\",","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863114Z","level":"info","event":"    \"bytes\": 18045,","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863198Z","level":"info","event":"    \"registros\": 32","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863284Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863368Z","level":"info","event":"  \"relatos\": {","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863454Z","level":"info","event":"    \"arquivo\": \"relatos_2026-11-17.json\",","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863539Z","level":"info","event":"    \"bytes\": 18165,","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863623Z","level":"info","event":"    \"registros\": 45","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863707Z","level":"info","event":"  }","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.863792Z","level":"info","event":"}","logger":"task.stdout"}
+{"timestamp":"2026-11-18T22:37:04.861025Z","level":"info","event":"Done. Returned value was: {'sp156': {'arquivo': 'sp156_2026-11-17.csv', 'bytes': 1148849, 'registros': 4519}, 'clima': {'arquivo': 'clima_2026-11-17.json', 'bytes': 18045, 'registros': 32}, 'relatos': {'arquivo': 'relatos_2026-11-17.json', 'bytes': 18165, 'registros': 45}}","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2026-11-18T22:37:04.861191Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('01a1f0ce-5d1e-7e73-b514-f8755bfebdcf'), task_id='conferir_chegada', dag_id='gs_coleta_calcadas', run_id='scheduled__2026-11-17T03:00:00+00:00', try_number=1, dag_version_id=UUID('01a1f0c9-188a-7a74-9c37-4e2d2b5ed700'), map_index=-1, hostname='28f8b71bc1e8', context_carrier={}, task=<Task(PythonOperator): conferir_chegada>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=2, start_date=datetime.datetime(2026, 11, 18, 22, 37, 4, 806398, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1352}
