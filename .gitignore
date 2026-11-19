@@ -1,0 +1,8 @@
+chegada/
+logs/
+.env
+__pycache__/
+*.pyc
+lotes/
+nginx_arquivos.conf
+*.tmp

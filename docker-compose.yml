@@ -1,0 +1,44 @@
+# Airflow 3 enxuto para o projeto (1 container Airflow + 1 Postgres).
+# Subir:   docker compose up -d
+# Abrir:   http://localhost:8080   (login desativado: todos entram como admin, só para uso local)
+# Parar:   docker compose down
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 10
+    restart: unless-stopped
+
+  airflow:
+    image: ${AIRFLOW_IMAGE:-apache/airflow:3.1.0}
+    command: standalone
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__DEFAULT_TIMEZONE: America/Sao_Paulo
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "True"
+      AIRFLOW__CORE__PARALLELISM: "8"
+      # pasta de pouso dentro do container (mapeada para ./chegada no seu PC)
+      GS_CHEGADA: /opt/airflow/chegada
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./chegada:/opt/airflow/chegada
+      - ./logs:/opt/airflow/logs
+    restart: unless-stopped
+
+volumes:
+  pg_data:
